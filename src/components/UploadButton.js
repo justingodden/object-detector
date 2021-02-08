@@ -13,14 +13,34 @@ const useStyles = makeStyles((theme) => ({
     }
 }));
 
-function UploadButton() {
+function UploadButton({ image, setImage }) {
     const classes = useStyles();
+
+    const handleCapture = (target) => {
+    if (target.files) {
+        if (target.files.length !== 0) {
+            const file = target.files[0];
+            const newUrl = URL.createObjectURL(file);
+            setImage(newUrl);
+            }
+        }
+    }
     return (
         <div className={classes.root}>
-            <Button variant="contained" color="primary">
+            <label htmlFor="icon-button-file">
+            <Button variant="contained" color="primary" component="span">
+                <input
+                className="fileUpload"
+                accept="image/*"
+                id="icon-button-file"
+                type="file"
+                capture="environment"
+                onChange={(e) => handleCapture(e.target)}
+            />
                 Upload a Photo
                 <PhotoCameraRoundedIcon className={classes.icon}/>
             </Button>
+            </label>
         </div>
     )
 }

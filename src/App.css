@@ -21,4 +21,16 @@
   width: 90%;
   border: 1px solid #111;
   margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.photo {
+  width: 90%;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border: 1px solid #111;
+}
+
+.fileUpload {
+  display: none;
 }

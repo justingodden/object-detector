@@ -1,10 +1,10 @@
 import React from 'react'
 
-function ImageContainer() {
+function ImageContainer({ image, setImage }) {
     return (
-        <div className="imageContainer">
-            
-        </div>
+        <>
+            {image ? <img src={image} alt={"snap"} className="photo"/> : <div className="imageContainer" />}
+        </>
     )
 }
 
