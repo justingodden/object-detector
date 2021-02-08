@@ -2,7 +2,7 @@ import React from 'react'
 
 function PredictedClasses() {
     return (
-        <div>
+        <div className="classes">
             Predicted classes:
             <ul>
                 <li>Class 1</li>

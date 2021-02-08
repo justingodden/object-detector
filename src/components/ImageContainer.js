@@ -1,9 +1,10 @@
 import React from 'react'
 
-function ImageContainer({ image, setImage }) {
+function ImageContainer({ image, setImage, classes }) {
     return (
         <>
-            {image ? <img src={image} alt={"snap"} className="photo"/> : <div className="imageContainer" />}
+            <img src={image} alt={"snap"} className="photo"/>
+            {/* <canvas id="canvas" width="600" height="399"></canvas> */}
         </>
     )
 }
