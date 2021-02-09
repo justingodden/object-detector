@@ -3,8 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import PhotoCameraRoundedIcon from "@material-ui/icons/PhotoCameraRounded";
 import * as tf from "@tensorflow/tfjs";
-import '@tensorflow/tfjs-backend-cpu';
-import '@tensorflow/tfjs-backend-webgl';
+// import '@tensorflow/tfjs-backend-cpu';
+// import '@tensorflow/tfjs-backend-webgl';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
 import { drawRect } from "../utilities";
 
