@@ -28,12 +28,21 @@ const useStyles = makeStyles((theme) => ({
 function UploadButton({ image, setImage, setClasses }) {
     const classes = useStyles();
 
-    const handleUpload = async (target) => {
+    const handleUpload = (target) => {
         if (target.files) {
             if (target.files.length !== 0) {
                 const file = target.files[0];
                 const newUrl = URL.createObjectURL(file);
+                
+                // img.src = newUrl;
+                // console.log(img.width);
+                // img.width = 90;
+                // console.log(img.src.width);
                 setImage(newUrl);
+                // let img = document.querySelector('.photo')
+                // let canvas = document.querySelector('.canvas')
+                // let ctx = canvas.getContext("2d")
+                // ctx.drawImage(img, 0, 0)
                 }
             }
         }
@@ -49,24 +58,24 @@ function UploadButton({ image, setImage, setClasses }) {
 
 
 
-        const c = document.querySelector('.canvas');
-        const context = c.getContext('2d');
-        context.drawImage(imageElement, 0, 0);
-        // drawRect(result, context);
-        context.font = '10px Arial';
+        // const c = document.querySelector('.canvas');
+        // const context = c.getContext('2d');
+        // context.drawImage(imageElement, 0, 0);
+        // // drawRect(result, context);
+        // context.font = '10px Arial';
 
-        console.log('number of detections: ', result.length);
-        for (let i = 0; i < result.length; i++) {
-            context.beginPath();
-            context.rect(...result[i].bbox);
-            context.lineWidth = 1;
-            context.strokeStyle = 'green';
-            context.fillStyle = 'green';
-            context.stroke();
-            context.fillText(
-                result[i].score.toFixed(3) + ' ' + result[i].class, result[i].bbox[0],
-                result[i].bbox[1] > 10 ? result[i].bbox[1] - 5 : 10);
-        }
+        // console.log('number of detections: ', result.length);
+        // for (let i = 0; i < result.length; i++) {
+        //     context.beginPath();
+        //     context.rect(...result[i].bbox);
+        //     context.lineWidth = 1;
+        //     context.strokeStyle = 'green';
+        //     context.fillStyle = 'green';
+        //     context.stroke();
+        //     context.fillText(
+        //         result[i].score.toFixed(3) + ' ' + result[i].class, result[i].bbox[0],
+        //         result[i].bbox[1] > 10 ? result[i].bbox[1] - 5 : 10);
+        // }
 
 
 

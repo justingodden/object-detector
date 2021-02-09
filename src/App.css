@@ -3,17 +3,21 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-image: linear-gradient(rgb(255, 255, 255), rgb(212, 209, 255));
+  height: 100vh;
+  width: 100vw;
 }
 
 .header {
   background-image: linear-gradient(45deg, rgba(132, 0, 255, 0.979), rgb(255, 94, 0));
-  height: 45px;
+  height: 90px;
   width: 100%;
   font-size: 22px;
   color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 2px 2px 5px grey;
 }
 
 .imageContainer {
@@ -25,16 +29,16 @@
 }
 
 .photo {
-  /* width: 90%; */
+  width: 90%;
   margin-top: 15px;
   margin-bottom: 15px;
   border: 1px solid #111;
 }
 
 .canvas {
-  width: auto;
-  height: auto;
-  /* background-size: 100% 100%; */
+  width: 90%;
+  height: 67.5vw;
+  background-size: 250px;
   margin-top: 15px;
   margin-bottom: 15px;
   border: 1px solid #111;
@@ -45,5 +49,10 @@
 }
 
 .classes {
-  margin: 20px;
+  margin: 20px 20px 0px 20px;
+  background-image: linear-gradient(rgba(255, 235, 243, 0.979), rgb(148, 103, 255));
+  height: 100%;
+  width: 80%;
+  border-radius: 50px 50px 0px 0px;
+  box-shadow: 4px 4px 10px grey;
 }
