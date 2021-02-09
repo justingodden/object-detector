@@ -23,7 +23,7 @@ function App() {
           setImage={setImage}
           setClasses={setClasses}
         />
-        <PredictedClasses />
+        <PredictedClasses classes={classes}/>
     </div>
   );
 }

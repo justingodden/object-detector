@@ -4,7 +4,7 @@ function ImageContainer({ image, setImage, classes }) {
     return (
         <>
             <img src={image} alt={"snap"} className="photo"/>
-            {/* <canvas id="canvas" width="600" height="399"></canvas> */}
+            <canvas className="canvas" width="600px" height="399px"></canvas>
         </>
     )
 }

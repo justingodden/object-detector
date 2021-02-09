@@ -1,13 +1,11 @@
 import React from 'react'
 
-function PredictedClasses() {
+function PredictedClasses({ classes }) {
     return (
         <div className="classes">
             Predicted classes:
             <ul>
-                <li>Class 1</li>
-                <li>Class 2</li>
-                <li>Class 3</li>
+                {classes && classes.map((cls, i) => <li key={i}>{cls.class} ({cls.score.toFixed(2)})</li>)}
             </ul>
         </div>
     )

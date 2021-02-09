@@ -6,7 +6,7 @@ import * as tf from "@tensorflow/tfjs";
 import '@tensorflow/tfjs-backend-cpu';
 import '@tensorflow/tfjs-backend-webgl';
 import * as cocoSsd from '@tensorflow-models/coco-ssd';
-
+import { drawRect } from "../utilities";
 
 // console.log("loading model")
 // const model = cocoSsd.load()
@@ -38,7 +38,7 @@ function UploadButton({ image, setImage, setClasses }) {
             }
         }
     
-    const handleDetect = async (target) => {
+    const handleDetect = async () => {
         let imageElement = document.querySelector('.photo')
         console.log(imageElement)
         const model = await modelPromise;
@@ -46,6 +46,30 @@ function UploadButton({ image, setImage, setClasses }) {
         let result = await model.detect(imageElement);
         console.log(result)
         setClasses(result)
+
+
+
+        const c = document.querySelector('.canvas');
+        const context = c.getContext('2d');
+        context.drawImage(imageElement, 0, 0);
+        // drawRect(result, context);
+        context.font = '10px Arial';
+
+        console.log('number of detections: ', result.length);
+        for (let i = 0; i < result.length; i++) {
+            context.beginPath();
+            context.rect(...result[i].bbox);
+            context.lineWidth = 1;
+            context.strokeStyle = 'green';
+            context.fillStyle = 'green';
+            context.stroke();
+            context.fillText(
+                result[i].score.toFixed(3) + ' ' + result[i].class, result[i].bbox[0],
+                result[i].bbox[1] > 10 ? result[i].bbox[1] - 5 : 10);
+        }
+
+
+
         }
         
     return (
